@@ -1,5 +1,5 @@
+### COMMANDE
 ```
-# SIEM
 sudo apt install default-jdk 
 sudo apt install gpg
 curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -

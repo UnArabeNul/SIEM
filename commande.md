@@ -15,3 +15,17 @@ discovery.seed_hosts: ["194.69.103.254", "0.0.0.0"]
 ```
 ### Azure
 NSG : règle entrante sur le port 9200
+### Index 
+```
+creation de l'index, et du member et de l'id via postman 
+curl --location --request POST 'http://20.111.15.63:9200/authors/member/1' \
+--header 'Content-Type: application/json' \
+--data-raw '
+{
+   "pseudo": "PapaMidnight",
+   "color": "Vert", 
+   "age": 1208993430
+    }
+
+'
+```

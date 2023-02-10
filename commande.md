@@ -36,8 +36,6 @@ curl --location --request POST 'http://20.111.15.63:9200/authors/member/1' \
 ```
 > création de l'index access-http-logs
 curl --location --request PUT 'http://20.111.15.63:9200/access-http-logs/' 
-
-
 ```
 ### Kibana 
 ```

@@ -1,6 +1,6 @@
 # COMMANDE
 ---
-### Elasticsearch install
+### Elasticsearch 
 ```
 sudo apt install default-jdk 
 sudo apt install gpg
@@ -32,7 +32,14 @@ curl --location --request POST 'http://20.111.15.63:9200/authors/member/1' \
 
 '
 ```
-### Kibana install
+### FileBeat
+```
+> création de l'index access-http-logs
+curl --location --request PUT 'http://20.111.15.63:9200/access-http-logs/' 
+
+
+```
+### Kibana 
 ```
 sudo apt install kibana
 sudo systemctl enable kibana

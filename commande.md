@@ -45,3 +45,9 @@ sudo apt install kibana
 sudo systemctl enable kibana
 sudo systemctl start kibana
 ```
+### kibana.yml
+```
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["http://20.111.15.63:9200"]
+```

@@ -1,5 +1,5 @@
 
-    VM-server (Allan)
+    VM-Server (Allan)
     
 - Mise en place d'une debian 11 non graphique 
 - 
@@ -12,4 +12,8 @@
 - Le domaine devra etre installer sur la VM-Network
 - Un antimalware devra être installé sur chaque machine
  
-               (Wayra)
+    VM-User ()
+    
+    VM-Gate (Nadir)
+    
+    VM-Siem ()

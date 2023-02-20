@@ -1,8 +1,11 @@
 ```
 VM-Server (Allan)
-```  
-- Mise en place d'une debian 11 non graphique 
-- 
+- Pas d'interface graphique
+- HTTP
+- Fail2ban
+- Portsentry
+- SSL + CA (haribo)
+- GPG
 
 ```
 VM-Network (Alexandre)

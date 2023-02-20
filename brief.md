@@ -1,5 +1,4 @@
-Poc à réaliser
-Envoie de log important sur elasticsearch
+Poc à réaliser, envoie de log important sur elasticsearch
 ```
 5 vm
 ```
@@ -44,6 +43,7 @@ VM-Gate (Nadir)
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway
 - Un antimalware devra être installé sur chaque machine
+- L'adresse IP sera fixe
 ```
 VM-SIEM (à determiner)
 ```

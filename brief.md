@@ -53,6 +53,11 @@ VM-SIEM (à determiner)
 - Un antimalware devra être installé sur chaque machine
 - Trois utilisateurs ont accès à l’interface de kibana : analyste, client et admin.
 - Le compte analyste ne pourra pas créer d’index mais le compte pourra cependant créer des dashboard
-- Le compte client ne pourra pas créer de donnée ni de dashboard, le compte pourra
-seulement visualiser les dashboard des analystes et les données des index
+- Le compte client ne pourra pas créer de donnée ni de dashboard, il pourra seulement visualiser les dashboard des analystes et les données des index
 - Le compte admin aura un accès administrateur sur toutes les fonctionnalités
+```
+Proposition d'amélioration
+```
+- Le client est en attente d’une proposition d’amélioration du filtrage proxy
+- Le client est en attente d’une proposition d’amélioration de la sécurité de l’intranet.
+- Le client est en attente d’une proposition d’amélioration de la sécurité de la connexion à distance aux machines.

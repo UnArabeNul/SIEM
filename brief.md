@@ -12,3 +12,4 @@
 - Le domaine devra etre installer sur la VM-Network
 - Un antimalware devra être installé sur chaque machine
  
+               (Wayra)

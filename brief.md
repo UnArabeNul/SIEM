@@ -37,5 +37,5 @@ VM-Gate (Nadir)
 VM-SIEM (à determiner)
 ```
 - Elastic
-- 
+- Kibana
 - Un antimalware devra être installé sur chaque machine

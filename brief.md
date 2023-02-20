@@ -7,7 +7,6 @@ VM-Server (Allan)
 - Portsentry
 - SSL + CA (haribo)
 - GPG
-- Un antimalware devra être installé sur chaque machine
 
 ```
 VM-Network (Alexandre)
@@ -28,9 +27,10 @@ VM-User (à determiner)
 ```
 VM-Gate (Nadir)
 ```
-
+- Pas d’environnement graphique
+- Serveur proxy HTTP
+- Toute requête vers une page web devra obligatoirement passer par le serveur proxy
+- Toutes les machines devront pouvoir accéder à internet à travers une Gateway
 ```
-VM-SIEM sur Azure (à determiner)
+VM-SIEM (à determiner)
 ```
-- Elastic
-- 

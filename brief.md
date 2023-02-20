@@ -8,4 +8,4 @@ VM-Gate (Nadir)
 - Un antimalware devra être installé sur chaque machine
 - L'adresse IP sera fixe
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
-```
+

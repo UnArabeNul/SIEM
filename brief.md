@@ -44,9 +44,15 @@ VM-Gate (Nadir)
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway
 - Un antimalware devra être installé sur chaque machine
 - L'adresse IP sera fixe
+- Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
 ```
 VM-SIEM (à determiner)
 ```
 - Elasticsearch
 - Kibana
 - Un antimalware devra être installé sur chaque machine
+- Trois utilisateurs ont accès à l’interface de kibana : analyste, client et admin.
+- Le compte analyste ne pourra pas créer d’index mais le compte pourra cependant créer des dashboard
+- Le compte client ne pourra pas créer de donnée ni de dashboard, le compte pourra
+seulement visualiser les dashboard des analystes et les données des index
+- Le compte admin aura un accès administrateur sur toutes les fonctionnalités

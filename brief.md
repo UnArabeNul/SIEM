@@ -4,5 +4,3 @@
 - update + upgrade du systeme 
 - installation du serveur Apache2
 - basculer le server http sous intranet-server 
-- 
-- 

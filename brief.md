@@ -1,21 +1,29 @@
-
-    VM-Server (Allan)
-    
+```
+VM-Server (Allan)
+```  
 - Mise en place d'une debian 11 non graphique 
 - 
 
-    VM-Network (Alexandre)
+```
+VM-Network (Alexandre)
+```
 - Pas d'interface graphique
 - DHCP
 - DNS 
 - SSH Serveur ( pour l'accès avec VM-User )
 - Le domaine devra etre installer sur la VM-Network
 - Un antimalware devra être installé sur chaque machine
- 
-    VM-User ()
--
 
-    VM-Gate (Nadir)
--    
-    VM-Siem ()
--
+
+```
+VM-User (à determiner)
+```
+
+
+```
+VM-Gate (Nadir)
+```
+
+```
+VM-SIEM (à determiner)
+```

@@ -23,7 +23,7 @@ VM-Network (Alexandre)
 ```
 VM-User (à determiner)
 ```
-
+- Un antimalware devra être installé sur chaque machine
 
 ```
 VM-Gate (Nadir)
@@ -32,8 +32,10 @@ VM-Gate (Nadir)
 - Serveur proxy HTTP
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway
+- Un antimalware devra être installé sur chaque machine
 ```
 VM-SIEM (à determiner)
 ```
 - Elastic
 - 
+- Un antimalware devra être installé sur chaque machine

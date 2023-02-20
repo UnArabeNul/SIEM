@@ -7,6 +7,7 @@ VM-Server (Allan)  login: intranet-server mdp: root
 - Portsentry
 - SSL + CA (haribo)
 - GPG
+- Un antimalware devra être installé sur chaque machine
 
 ```
 VM-Network (Alexandre)

@@ -53,5 +53,23 @@
 
   ```sudo systemctl restart apache2```
 
+  **création de la CA avec openssl**
+  
+  - On génére la clé qui servira pour la CA 
+  
+    ```openssl genrsa -des3 -out ca.key 4096```
+   
+    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
+    Dans Organization name name HARIBO et pareil dans Common Name
+    
+   **Création des clés pour les certifs du server http**
+    ```openssl genrsa -des3 -out apache_server.key 4096```
+    
+   **Création de certificat server**
+    ```openssl req -new -x509 -days 365 -key apache_server.key -out apache_server.csr```
+      
+   **Trusted du certificat server grace à la clé pv de la CA
+      
+    openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key  -CAcreateserial -out         apache_server.crt (modifié)
 
 

@@ -17,8 +17,9 @@
 - Utilisez la commande suivante pour crée un utilisateur>> Sudo htpasswd -c /etc/apache2/.htpasswd "username      voulu"
 - Pensez à supprimer le -c pour ajouter les utilisateurs suivant sans owerwrite l'user
 
-- Modifier le fichier de configuration  "nano /etc/apache2/sites-enabled/000-default.conf" 
+- Modifier le fichier de configuration  ```nano /etc/apache2/sites-enabled/000-default.conf"``` 
 
+```
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/html
@@ -32,7 +33,7 @@
         Require valid-user
     </Directory>
 </VirtualHost>
-
+```
 
 - **Cacher la version du server apache2** 
 

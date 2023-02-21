@@ -11,8 +11,7 @@
 
 - Création des dossiers log/ et /www  au niveau de la home de l'utilisateur intranet-server
 
-- Création d'une save du fichier de conf : 
-  ```"000-default.conf en 000-default.conf.bak```
+- Création d'une save du fichier de conf : ```000-default.conf en 000-default.conf.bak```
 
 - Mise en place de l'**authentification basique** pour acceder au ressources heberger par le site via              l'utilisateur     **"user" avec le mdp: "root"**
 - Utilisez la commande suivante pour crée un utilisateur>> Sudo htpasswd -c /etc/apache2/.htpasswd "username      voulu"

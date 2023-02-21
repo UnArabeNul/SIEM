@@ -35,9 +35,9 @@
 </VirtualHost>
 ```
 
-- **Cacher la version du server apache2** 
+ - **Cacher la version du server apache2** 
 
-- En modifiant le fichier de conf de securité : sudo nano /etc/apache2/conf-enabled/security.conf
+ - En modifiant le fichier de conf de securité : sudo nano /etc/apache2/conf-enabled/security.conf
 
  - Pour cacher la version du server:
   
@@ -49,7 +49,7 @@
 
   ServerSignature **On** par ServerSignature **Off** 
 
-- Ensuite on redémarre le service:
+ - Ensuite on redémarre le service:
 
   ```sudo systemctl restart apache2```
 
@@ -57,9 +57,9 @@
   
   - On génére la clé qui servira pour la CA 
   
-    ```openssl genrsa -des3 -out ca.key 4096```
+   ```openssl genrsa -des3 -out ca.key 4096```
    
-    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
+   ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
     Dans Organization name name HARIBO et pareil dans Common Name
     
    **Création des clés pour les certifs du server http**
@@ -70,6 +70,6 @@
       
    **Trusted du certificat server grace à la clé pv de la CA
       
-    openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key  -CAcreateserial -out         apache_server.crt (modifié)
+    ```openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key  -CAcreateserial -out apache_server.crt (modifié)```
 
 

@@ -39,16 +39,19 @@
 
 - En modifiant le fichier de conf de securité : sudo nano /etc/apache2/conf-enabled/security.conf
 
-ServerTokens OS  par ServerTokens Prod pour cacher la version du server 
+ - Pour cacher la version du server:
+  
+  ServerTokens **OS**  par ServerTokens **Prod** 
 
 **Ameliorations à proposer :**
 
 - Masquer la mention "Apache Server", il faut venir remplacer :
 
-ServerSignature On par ServerSignature Off 
+  ServerSignature **On** par ServerSignature **Off** 
 
-- Redémarrer le service
-  sudo systemctl restart apache2
+- Ensuite on redémarre le service:
+
+  ```sudo systemctl restart apache2```
 
 
 

@@ -2,7 +2,7 @@
 - Pas d’environnement graphique [x]
 - Serveur proxy HTTP [x]  
 
-sudo apt-get update
+sudo apt-get update  
 sudo apt-get install squid
 
 sudo nano /etc/squid/squid.conf

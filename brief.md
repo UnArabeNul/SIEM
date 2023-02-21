@@ -13,6 +13,7 @@ VM-Server (Allan)  login: intranet-server mdp: root
 - GPG
 - Un antimalware devra être installé sur chaque machine
 - Devra obtenir une adresse IP fixe automatiquement
+- Porcentry
 
 ```
 VM-Network (Alexandre)
@@ -26,6 +27,7 @@ VM-Network (Alexandre)
 - Le domaine devra etre installer sur la VM-Network
 - Un antimalware devra être installé sur chaque machine
 - L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines
+- Porcentry
 
 ```
 VM-User (à determiner)
@@ -34,6 +36,7 @@ VM-User (à determiner)
 - Accès à internet
 - Un antimalware devra être installé sur chaque machine
 - Devra obtenir une adresse IP automatiquement
+- Porcentry
 
 ```
 VM-Gate (Nadir)
@@ -45,6 +48,8 @@ VM-Gate (Nadir)
 - Un antimalware devra être installé sur chaque machine
 - L'adresse IP sera fixe
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
+- Porcentry
+
 ```
 VM-SIEM (à determiner)
 ```

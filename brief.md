@@ -8,7 +8,7 @@ sudo apt-get install squid
 sudo nano /etc/squid/squid.conf
 ### squid.conf
 ```
-décommenter la ligne ci-dessous
+#décommenter la ligne ci-dessous
 http_access allow localnet
 ```
 - Le client est en attente d’une proposition d’amélioration du filtrage proxy [x]

@@ -57,7 +57,7 @@
   
   - On génére la clé qui servira pour la CA 
   
-   ```openssl genrsa -des3 -out ca.key 4096```  
+   ```openssl genrsa -des3 -out ca.key 4096```a   
     passphrase : root
    
    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
@@ -66,7 +66,7 @@
     ```openssl genrsa -des3 -out apache_server.key 4096```
     
    **Création de certificat server**
-    ```openssl req -new -x509 -days 365 -key apache_server.key -out apache_server.csr```
+    ```openssl req -new -key apache_server.key -out apache_server.csr```
     
       Dans Organisation name name HARIBO et "intra.haribo.lan" dans Common Name
      

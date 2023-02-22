@@ -57,7 +57,8 @@
   
   - On génére la clé qui servira pour la CA 
   
-   ```openssl genrsa -des3 -out ca.key 4096```
+   ```openssl genrsa -des3 -out ca.key 4096```  
+    passphrase : root
    
    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
     

@@ -60,13 +60,15 @@
    ```openssl genrsa -des3 -out ca.key 4096```
    
    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
-    Dans Organization name name HARIBO et pareil dans Common Name
     
    **Création des clés pour les certifs du server http**
     ```openssl genrsa -des3 -out apache_server.key 4096```
     
    **Création de certificat server**
     ```openssl req -new -x509 -days 365 -key apache_server.key -out apache_server.csr```
+    
+      Dans Organisation name name HARIBO et "intra.haribo.lan" dans Common Name
+     
       
    **Trusted du certificat server grace à la clé pv de la CA
       

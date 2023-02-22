@@ -75,3 +75,34 @@ zone "0.0.10.in-addr.arpa" {
         type master;
         file "/etc/bind/db.0.0.10.in-addr.arpa";
 };
+
+nano /etc/bind/db.haribo.lan
+
+$TTL 10800
+$ORIGIN devops.
+@       IN SOA VM-Network.haribo.lan root.haribo.lan (
+        20230222;
+        3h;
+        1h;
+        1w;
+        1h);
+@       IN NS VM-Network.haribo.lan.
+VM-Network  IN A  10.0.0.10
+VM-Server  IN A  10.0.0.20
+localhost  IN A  127.0.0.1
+intra  IN A 10.0.0.20
+nano /etc/bind/db.0.0.10.in-addr.arpa
+
+$TTL 10800
+$ORIGIN 0.0.10.in-addr.arpa.
+@       IN SOA VM-Network.haribo.lan root.haribo.lan (
+        20230222;
+        3h;
+        1h;
+        1w;
+        1h);
+@       IN NS VM-Network.haribo.lan.
+20     IN PTR VM-Network.haribo.lan.
+20     IN PTR intra.haribo.aln.
+10     IN PTR VM-Server.haribo.lan.
+1      IN PTR localhost.haribo.lan.

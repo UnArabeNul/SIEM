@@ -14,9 +14,8 @@ Modifier la 1ere carte réseau en NAT
 Ajouter une carte réseau en host-only
 ### VM-GATE
 ```
-sudo apt-get update
-sudo apt-get install sudo
-sudo apt-get install iptables
+apt install sudo
+sudo apt install iptables
 ```
 configuration des cartes réseaux
 > interfaces
@@ -45,14 +44,14 @@ sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
 ```
 rendre permanant les règles de routage
 ```
-sudo apt-get install iptables-persistent
+sudo apt install iptables-persistent
 enter
 enter
 ```
 ## MISE EN PLACE DU PROXY AVEC FILTRAGE
 ### VM-GATE
 ``` 
-sudo apt-get install squid  
+sudo apt install squid  
 sudo systemctl enable squid
 ```
 ```

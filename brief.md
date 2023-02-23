@@ -34,10 +34,6 @@ up l'interface
 ip link set ens33 up
 ip link set ens36 up
 ```
-activation de l'ip forward
-```
-sudo sysctl net.ipv4.ip_forward=1
-```
 activation de l'ip forward sur /etc/sysctl.conf
 > sysctl.conf
 ```
@@ -50,8 +46,8 @@ sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
 rendre permanant les règles de routage
 ```
 sudo apt install iptables-persistent
-enter
-enter
+yes
+yes
 ```
 ## MISE EN PLACE DU PROXY AVEC FILTRAGE
 ### VM-GATE

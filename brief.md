@@ -2,8 +2,8 @@
 - Pas d’environnement graphique [x]
 - L'adresse IP sera fixe [x]
 - Serveur proxy HTTP [x]  
-- Le client est en attente d’une proposition d’amélioration du filtrage proxy [x]
-- Toute requête vers une page web devra obligatoirement passer par le serveur proxy [x]
+- Le client est en attente d’une proposition d’amélioration du filtrage proxy 
+- Toute requête vers une page web devra obligatoirement passer par le serveur proxy 
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
 - Un antimalware devra être installé sur chaque machine
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.

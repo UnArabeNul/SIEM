@@ -3,14 +3,55 @@
 - Serveur proxy HTTP [x]  
 - Le client est en attente d’une proposition d’amélioration du filtrage proxy [x]
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy [x]
-- Toutes les machines devront pouvoir accéder à internet à travers une Gateway 
+- Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
 - Un antimalware devra être installé sur chaque machine
 - L'adresse IP sera fixe [x]
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
 
-## MISE EN PLACE DU PROXY AVEC FILTRAGE
+## CONFIGURATION DE L'INTERFACE RÉSEAU
+### VmWare
+Modifier la 1ere carte réseau en NAT
+Ajouter une carte réseau en host-only
+### VM-GATE
 ```
-sudo apt-get update  
+sudo apt-get update
+sudo apt-get install sudo
+sudo apt-get install iptables
+```
+configuration des cartes réseaux
+> interfaces
+```
+auto ens33
+iface ens33 inet dhcp
+
+allow-hotplug ens36
+iface ens36 inet static
+address 10.0.0.254
+netmask 255.255.255.0
+gateway 10.0.0.254
+```
+activation de l'ip forward avec une commande
+```
+sudo sysctl net.ipv4.ip_forward=1
+```
+activation de l'ip forward sur /etc/sysctl.conf
+> sysctl.conf
+```
+net.ipv4.ip_forward=1
+```
+ajouter une règle postrouting
+```
+sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
+```
+rendre permanant les règles de routage
+```
+sudo apt-get install iptables-persistent
+enter
+enter
+```
+## MISE EN PLACE DU PROXY AVEC FILTRAGE
+### VM-GATE
+``` 
 sudo apt-get install squid  
 sudo systemctl enable squid
 ```

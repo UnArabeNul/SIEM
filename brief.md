@@ -30,7 +30,7 @@ address 10.0.0.254
 netmask 255.255.255.0
 gateway 10.0.0.254
 ```
-activation de l'ip forward avec une commande
+activation de l'ip forward
 ```
 sudo sysctl net.ipv4.ip_forward=1
 ```

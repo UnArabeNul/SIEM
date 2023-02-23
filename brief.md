@@ -1,17 +1,17 @@
 # VM-Gate
 - Pas d’environnement graphique [x]
+- L'adresse IP sera fixe [x]
 - Serveur proxy HTTP [x]  
 - Le client est en attente d’une proposition d’amélioration du filtrage proxy [x]
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy [x]
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
 - Un antimalware devra être installé sur chaque machine
-- L'adresse IP sera fixe [x]
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
 
 ## CONFIGURATION DE L'INTERFACE RÉSEAU
 ### VmWare
 Modifier la 1ere carte réseau en NAT
-Ajouter une carte réseau en host-only
+Ajouter une 2eme carte réseau en host-only
 ### VM-GATE
 ```
 apt install sudo
@@ -28,6 +28,11 @@ iface ens36 inet static
 address 10.0.0.254
 netmask 255.255.255.0
 gateway 10.0.0.254
+```
+up l'interface
+```
+ip link set ens33 up
+ip link set ens36 up
 ```
 activation de l'ip forward
 ```

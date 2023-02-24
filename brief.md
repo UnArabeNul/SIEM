@@ -10,7 +10,7 @@
 
 ## CONFIGURATION DE L'INTERFACE RÉSEAU
 ### VmWare
-Modifier la 1ere carte réseau en NAT
+Modifier la 1ere carte réseau en NAT  
 Ajouter une 2eme carte réseau en host-only
 ### VM-GATE
 ```

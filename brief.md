@@ -1,12 +1,12 @@
 # VM-Gate
 - Pas d’environnement graphique [x]
 - L'adresse IP sera fixe [x]
-- Serveur proxy HTTP [x]  
+- Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
+- Serveur proxy HTTP 
 - Le client est en attente d’une proposition d’amélioration du filtrage proxy 
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy 
-- Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
 - Un antimalware devra être installé sur chaque machine
-- Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
+- Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
 
 ## CONFIGURATION DE L'INTERFACE RÉSEAU
 ### VmWare
@@ -17,8 +17,8 @@ Ajouter une 2eme carte réseau en host-only
 apt install sudo
 sudo apt install iptables
 ```
-configuration des cartes réseaux
-> interfaces
+#### Configuration des cartes réseaux
+> /etc/network/interfaces
 ```
 auto ens33
 iface ens33 inet dhcp
@@ -29,21 +29,21 @@ address 10.0.0.254
 netmask 255.255.255.0
 gateway 10.0.0.254
 ```
-up l'interface
+#### Up l'interface
 ```
 ip link set ens33 up
 ip link set ens36 up
 ```
-activation de l'ip forward sur /etc/sysctl.conf
-> sysctl.conf
+#### Activation de l'ip forward
+> /etc/sysctl.conf
 ```
 net.ipv4.ip_forward=1
 ```
-ajouter une règle postrouting
+#### Ajouter une règle postrouting
 ```
 sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
 ```
-rendre permanant les règles de routage
+#### Rendre permanant les règles de routage
 ```
 sudo apt install iptables-persistent
 yes

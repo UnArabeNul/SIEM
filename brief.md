@@ -74,17 +74,16 @@
       
     ```openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key  -CAcreateserial -out apache_server.crt (modifié)```
   
+  
     Il faut **activer le protocole SSL** 
+        sudo a2enmod ssl
     
-    ```sudo a2enmod ssl```
-    
-    Modification du fichier de config du virtual host "443"
-    
+    Modification du fichier de config du virtual host "443" 
     
    ```<IfModule mod_ssl.c>
         <VirtualHost _default_:443>
                 ServerAdmin webmaster@localhost
-                DocumentRoot /var/www/html/WebGoatPHP
+                DocumentRoot **/var/www/html/WebGoatPHP**
           
                 ErrorLog ${APACHE_LOG_DIR}/error.log
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
@@ -94,15 +93,15 @@
                 #   Enable/Disable SSL for this virtual host.
                 SSLEngine on
 
-                SSLCertificateFile      /etc/ssl/certs/apache_server.crt
-                SSLCertificateKeyFile /etc/ssl/private/apache_server.key
+                SSLCertificateFile      **/etc/ssl/certs/apache_server.crt**
+                SSLCertificateKeyFile **/etc/ssl/private/apache_server.key**
 
                 #   Server Certificate Chain:
                 #SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
 
                 #   Certificate Authority (CA):             
                 SSLCACertificatePath /etc/ssl/certs/
-                SSLCACertificateFile /etc/ssl/ca_cert.pem
+                SSLCACertificateFile **/etc/ssl/ca_cert.pem**
           
                 <FilesMatch "\.(cgi|shtml|phtml|php)$">
                                 SSLOptions +StdEnvVars

@@ -3,6 +3,7 @@ Installation d'une debian 11 non-graphique effectuer l'update + upgrade du syste
   1/ **installation du serveur Apache2**
    
  Création d'un utilisateur "intranet-server" pour eviter d'exposer le compte "root" lors de l'utilisation du serveur apache2
+ 
  Ajout de l'utilisateur "intranet-server" au groupe www-data pour permettre l'execution du server apache2
 
  ```sudo adduser intranet-server www-data```

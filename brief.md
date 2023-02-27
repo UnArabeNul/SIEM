@@ -92,7 +92,7 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
     
    - Trusted du certificat server grace aux clé/certif de la CA
       
-    ```openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key -out apache_server.crt```
+    ```openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key -CAcreateserial -out apache_server.crt```
     
    - activation du module ssl
     

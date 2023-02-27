@@ -32,21 +32,21 @@ VM-Network (Alexandre)
 ```
 VM-User (à determiner)
 ```
-- Interface graphique
-- Accès à internet
+- <del>Interface graphique</del>
+- <del>Accès à internet</del>
 - Un antimalware devra être installé sur chaque machine
-- Devra obtenir une adresse IP automatiquement
+- <del>Devra obtenir une adresse IP automatiquement</del>
 - Porcentry
 
 ```
 VM-Gate (Nadir)
 ```
-- Pas d’environnement graphique
+- <del>Pas d’environnement graphique</del>
 - Serveur proxy HTTP
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy
-- Toutes les machines devront pouvoir accéder à internet à travers une Gateway
+- <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 - Un antimalware devra être installé sur chaque machine
-- L'adresse IP sera fixe
+- <del>L'adresse IP sera fixe</del>
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
 - Porcentry
 

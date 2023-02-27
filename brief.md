@@ -10,7 +10,7 @@ VM-Network (Alexandre)
 - Le domaine devra etre installer sur la VM-Network *fait*
 - Un antimalware devra être installé sur chaque machine
 - L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines *fait*
-- <del>barre</del> Porcentry
+- Porcentry
 
 
 

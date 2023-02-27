@@ -41,14 +41,14 @@ VM-User (à determiner)
 ```
 VM-Gate (Nadir)
 ```
-- <del>Pas d’environnement graphique</del>
-- Serveur proxy HTTP
+- ~~Pas d’environnement graphique
+- ~~L'adresse IP sera fixe
+- ~~Toutes les machines devront pouvoir accéder à internet à travers une Gateway
+- ~~Serveur proxy HTTP
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy
-- <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 - Un antimalware devra être installé sur chaque machine
-- <del>L'adresse IP sera fixe</del>
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.
-- Porcentry
+- Portcentry
 
 ```
 VM-SIEM (à determiner)

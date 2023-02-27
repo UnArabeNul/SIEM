@@ -3,13 +3,13 @@ VM-Network (Alexandre)
 ```
 - Pas d'interface graphique *fait*
 - DHCP *fait*
-- DNS 
+- DNS *fait*
 - Accès à internet *fait*
-- Création domaine haribo.lan
+- Création domaine haribo.lan *fait*
 - SSH Serveur ( pour l'accès avec VM-User )
-- Le domaine devra etre installer sur la VM-Network
+- Le domaine devra etre installer sur la VM-Network *fait*
 - Un antimalware devra être installé sur chaque machine
-- L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines
+- L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines *fait*
 - Porcentry
 
 
@@ -55,7 +55,7 @@ nano /etc/hostname                      #y inscrire le FQDN "vm-network.haribo.l
 nano /etc/hosts                         #modifier le fichier et y ajouter le nom du serveur et son IPV4
 
 127.0.0.1       localhost
-127.0.0.1       VM-Network.haribo.lan
+127.0.1.1       VM-Network.haribo.lan
 10.0.0.10       VM-Network.haribo.lan
 
 nano /etc/resolv.conf                   #Indiquez le domaine et la zone de recherche DNS.
@@ -79,9 +79,9 @@ zone "0.0.10.in-addr.arpa" {
 nano /etc/bind/db.haribo.lan
 
 $TTL 10800
-$ORIGIN devops.
+$ORIGIN haribo.lan.
 @       IN SOA VM-Network.haribo.lan root.haribo.lan (
-        20230222;
+        2023022201;
         3h;
         1h;
         1w;
@@ -96,12 +96,12 @@ nano /etc/bind/db.0.0.10.in-addr.arpa
 $TTL 10800
 $ORIGIN 0.0.10.in-addr.arpa.
 @       IN SOA VM-Network.haribo.lan root.haribo.lan (
-        20230222;
+        2023022201;
         3h;
         1h;
         1w;
         1h);
 @       IN NS VM-Network.haribo.lan.
 20     IN PTR intra.haribo.lan.
-10     IN PTR VM-Server.haribo.lan.
+10     IN PTR VM-Network.haribo.lan.
 1      IN PTR localhost.haribo.lan.

@@ -2,11 +2,17 @@
 - Pas d’environnement graphique [x]
 - L'adresse IP sera fixe [x]
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
-- Serveur proxy HTTP 
-- Le client est en attente d’une proposition d’amélioration du filtrage proxy 
+- Serveur proxy HTTP  
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy 
+- SSH  
+  ● L'authentification en root devra être désactivé et ce même par clé.
+  ● Le serveur SSH devra logger chaque connexion échouée ou réussie.
+- Fail2ban  
+  ● Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
+  heures, son IP devra être bannie pour une durée de 2 minutes
+- Portcentry  
+  ● Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
 - Un antimalware devra être installé sur chaque machine
-- Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
 
 ## CONFIGURATION DE L'INTERFACE RÉSEAU
 ### VmWare
@@ -60,16 +66,10 @@ sudo nano /etc/squid/squid.conf
 ```
 > squid.conf
 ```
-http_port 3128
-
-acl CONNECT method CONNECT
-acl blacklist dstdomain "/etc/squid/blacklist.acl"
-
-http_access deny blacklist
-http_access allow localnet
-http_access allow localhost
-
-http_access deny all
+acl lan src 10.0.0.0/24
+acl blacklist url_regex "/etc/squid/blacklist.acl"
+http_access deny lan blacklist
+http_access allow lan
 ```
 ```
 sudo nano /etc/squid/blacklist.acl
@@ -77,10 +77,10 @@ sudo nano /etc/squid/blacklist.acl
 > blacklist.acl
 ```
 .facebook.com
-.youtube.com
+arme
 ```
 ```
-sudo systemctl restart squid
+sudo systemctl reload squid
 ```
 ## LIAISON VM-GATE <-> VM-AZURE
 ### VM-GATE

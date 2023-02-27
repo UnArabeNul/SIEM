@@ -41,10 +41,10 @@ VM-User (à determiner)
 ```
 VM-Gate (Nadir)
 ```
-- ~~Pas d’environnement graphique
-- ~~L'adresse IP sera fixe
-- ~~Toutes les machines devront pouvoir accéder à internet à travers une Gateway
-- ~~Serveur proxy HTTP
+- <del>Pas d’environnement graphique</del>
+- <del>L'adresse IP sera fixe</del>
+- <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
+- <del>Serveur proxy HTTP</del>
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy
 - Un antimalware devra être installé sur chaque machine
 - Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier.

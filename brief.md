@@ -18,15 +18,15 @@ VM-Server (Allan)  login: intranet-server mdp: root
 ```
 VM-Network (Alexandre)
 ```
-- Pas d'interface graphique
-- DHCP
-- DNS
-- Accès à internet
-- Création domaine haribo.lan
+- <del>Pas d'interface graphique</del>
+- <del>DHCP</del>
+- <del>DNS</del>
+- <del>Accès à internet</del>
+- <del>Création domaine haribo.lan</del>
 - SSH Serveur ( pour l'accès avec VM-User )
-- Le domaine devra etre installer sur la VM-Network
+- <del>Le domaine devra etre installer sur la VM-Network</del>
 - Un antimalware devra être installé sur chaque machine
-- L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines
+- <del>L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines</del>
 - Porcentry
 
 ```

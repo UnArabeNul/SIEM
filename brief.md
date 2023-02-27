@@ -4,15 +4,15 @@ Poc à réaliser, envoie de log important sur elasticsearch
 ```
 VM-Server (Allan)  login: intranet-server mdp: root
 ```
-- Pas d'interface graphique
-- Accès à internet
-- HTTP
+- <del>Pas d'interface graphique</del>
+- <del>Accès à internet</del>
+- <del>HTTP</del>
 - Fail2ban
 - Portsentry
 - SSL + CA (haribo)
 - GPG
 - Un antimalware devra être installé sur chaque machine
-- Devra obtenir une adresse IP fixe automatiquement
+- <del>Devra obtenir une adresse IP fixe automatiquement</del>
 - Porcentry
 
 ```

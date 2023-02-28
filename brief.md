@@ -103,7 +103,7 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
     
    - Trusted du certificat server grace aux clé/certif de la CA (inter)
       
-    ```openssl x509 -req -days 365 -in apache_server.csr  -CA inter_ca_cert.pem -CAkey inter_ca.key -CAcreateserial -out 				apache_server.crt```
+    ```openssl x509 -req -days 365 -in apache_server.csr  -CA inter_ca_cert.pem -CAkey inter_ca.key -CAcreateserial -out apache_server.crt```
     
     
     La CA root (clé+ certif) à été creée, il faut crée une autorité intermediaire (clé+certif signé par la CA root) et enfin cré 	un certificat server (clé + certif signé par la CA intermediaire) 

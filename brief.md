@@ -65,7 +65,7 @@ cd /usr/share/elasticsearch/bin
 ./elasticsearch-create-enrollment-token --scope kibana
 ```
 
-*On peut maintenant copier coller le token obtenu dans la page kibana du navigateur *
+On peut maintenant copier coller le token obtenu dans la page kibana du navigateur.
 
 *Un code de vérification est maintenant demandé. Pour l'obtenir il faut se placer dans la machine kibana en faisant :*
 
@@ -77,4 +77,4 @@ cd /usr/share/kibana/bin
 ./kibana-verification-code
 ```
 
-*On peut maintenant copier coller le code obtenu dans la page kibana du navigateur *
+On peut maintenant copier coller le code obtenu dans la page kibana du navigateur.

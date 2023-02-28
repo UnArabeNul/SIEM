@@ -1,18 +1,18 @@
 # VM-Gate
-- Pas d’environnement graphique [x]
-- L'adresse IP sera fixe [x]
-- Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
-- Serveur proxy HTTP [x]
-- Toute requête vers une page web devra obligatoirement passer par le serveur proxy 
-- SSH  
-  ● L'authentification en root devra être désactivé et ce même par clé.
-  ● Le serveur SSH devra logger chaque connexion échouée ou réussie.
-- Fail2ban  
-  ● Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
+* Pas d’environnement graphique [x]
+* L'adresse IP sera fixe [x]
+* Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
+* Serveur proxy HTTP [x]
+* Toute requête vers une page web devra obligatoirement passer par le serveur proxy
+* SSH
+  * L'authentification en root devra être désactivé et ce même par clé.
+  * Le serveur SSH devra logger chaque connexion échouée ou réussie.
+* Fail2ban
+  * Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
   heures, son IP devra être bannie pour une durée de 2 minutes
-- Portcentry  
-  ● Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
-- Un antimalware devra être installé sur chaque machine
+* Portcentry
+  * Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
+* Un antimalware devra être installé sur chaque machine
 
 ## CONFIGURATION DE L'INTERFACE RÉSEAU
 ### VmWare

@@ -1,4 +1,4 @@
-# Installer Elasticsearch avec le paquet Debian
+# Installer Elasticsearch
 *Installer GPG*
 ```
 sudo apt install gpg

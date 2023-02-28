@@ -108,7 +108,7 @@ sudo dpkg -i metricbeat-8.6.2-amd64.deb
 ```
 nano /etc/metricbeat/metricbeat.yml
 ```
-* et définir les paramètres suivants :*
+*et définir les paramètres suivants :*
 ```
 =========================== Modules configuration ============================
 reload.enabled: true
@@ -134,7 +134,7 @@ output.elasticsearch:
 
 *Configurer les ressources avec :*
 ```
-metricbeat setup -e
+metricbeat setup -e (cela peut durer un certain moment, il faut attendre qu'il soit loaded)
 ```
 
 *Démarrer Metricbeat*

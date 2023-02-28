@@ -33,4 +33,48 @@ sudo /bin/systemctl enable elasticsearch.service
 *Elasticsearch peut être démarré et arrêté comme suit :*
 ```
 sudo systemctl start elasticsearch.service
+sudo systemctl stop elasticsearch.service
 ```
+*Tester elasticsearch :*
+```
+curl -k -u elastic:<mdp> https://localhost:9200
+```
+# Installer Kibana
+
+*Installer le package Kibana Debian avec :*
+```
+sudo apt-get update && sudo apt-get install kibana
+```
+
+*Modifier dans le fichier de conf avec nano /etc/kibana/kibana.yml :*
+```
+server.host: "0.0.0.0"
+```
+
+*Dans son navigateur saisir :*
+```
+http://adresseIP-publique:5601
+```
+
+*Pour obtenir son enrollment token il faut se déplacer dans la machine elasticsearch en faisant :*
+```
+cd /usr/share/elasticsearch/bin
+```
+*et une fois ici saisir :*
+```
+./elasticsearch-create-enrollment-token --scope kibana
+```
+
+*On peut maintenant copier coller le token obtenu dans la page kibana du navigateur *
+
+*Un code de vérification est maintenant demandé. Pour l'obtenir il faut se placer dans la machine kibana en faisant :*
+
+```
+cd /usr/share/kibana/bin
+```
+*et une fois ici saisir :*
+```
+./kibana-verification-code
+```
+
+*On peut maintenant copier coller le code obtenu dans la page kibana du navigateur *

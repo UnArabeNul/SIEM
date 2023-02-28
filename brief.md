@@ -108,7 +108,8 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
     
     La CA root (clé+ certif) à été creée, il faut crée une autorité intermediaire (clé+certif signé par la CA root) et enfin cré 	un certificat server (clé + certif signé par la CA intermediaire) 
     
-  
+   Verifier les certificats avec la commande :   ```openssl x509 -noout -text -in certs/cacert.pem```
+
     
    - activation du module ssl
     

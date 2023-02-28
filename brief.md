@@ -1,9 +1,7 @@
 # VM-Gate
-* Pas d’environnement graphique [x]
-* L'adresse IP sera fixe [x]
-* Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
-* Serveur proxy HTTP [x]
-* Toute requête vers une page web devra obligatoirement passer par le serveur proxy
+## SOMMAIRE
+* [Configuration de l'interface réseau](#configuration-de-linterface-réseau)
+* [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.

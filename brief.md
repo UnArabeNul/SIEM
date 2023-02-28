@@ -1,5 +1,10 @@
 # Nadir
-tâches :
+Tâches :
+* <del>Pas d’environnement graphique</del>
+* <del>L'adresse IP sera fixe</del>
+* <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
+* <del>Serveur proxy HTTP</del>
+* Toute requête vers une page web devra obligatoirement passer par le serveur proxy
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.

@@ -2,7 +2,7 @@
 - Pas d’environnement graphique [x]
 - L'adresse IP sera fixe [x]
 - Toutes les machines devront pouvoir accéder à internet à travers une Gateway [x]
-- Serveur proxy HTTP  
+- Serveur proxy HTTP [x]
 - Toute requête vers une page web devra obligatoirement passer par le serveur proxy 
 - SSH  
   ● L'authentification en root devra être désactivé et ce même par clé.

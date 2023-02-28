@@ -25,6 +25,11 @@ sudo apt-get update && sudo apt-get install elasticsearch
 
 **Exécuter Elasticsearch avec systemd**
 
+*Modifier dans le fichier de conf avec nano /etc/elasticsearch/elasticsearch.yml :*
+```
+network.host: "0.0.0.0"
+```
+
 *Pour configurer Elasticsearch afin qu'il démarre automatiquement au démarrage du système, exécutez les commandes suivantes :*
 ```
 sudo /bin/systemctl daemon-reload
@@ -33,8 +38,8 @@ sudo /bin/systemctl enable elasticsearch.service
 *Elasticsearch peut être démarré et arrêté comme suit :*
 ```
 sudo systemctl start elasticsearch.service
-sudo systemctl stop elasticsearch.service
 ```
+
 *Tester elasticsearch :*
 ```
 curl -k -u elastic:<mdp> https://localhost:9200
@@ -51,9 +56,22 @@ sudo apt-get update && sudo apt-get install kibana
 server.host: "0.0.0.0"
 ```
 
+*Exécutez Kibana avec systemd*
+
+*Pour configurer Kibana afin qu'il démarre automatiquement au démarrage du système, exécutez les commandes suivantes :*
+```
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable kibana.service
+```
+*Kibana peut être démarré et arrêté comme suit :*
+```
+sudo systemctl start kibana.service
+sudo systemctl stop kibana.service
+```
+
 *Dans son navigateur saisir :*
 ```
-http://adresseIP-publique:5601
+http://4.233.61.203:5601
 ```
 
 *Pour obtenir son enrollment token il faut se déplacer dans la machine elasticsearch en faisant :*
@@ -65,7 +83,7 @@ cd /usr/share/elasticsearch/bin
 ./elasticsearch-create-enrollment-token --scope kibana
 ```
 
-On peut maintenant copier coller le token obtenu dans la page kibana du navigateur.
+On peut maintenant copier coller le token obtenu dans la page kibana du navigateur 
 
 *Un code de vérification est maintenant demandé. Pour l'obtenir il faut se placer dans la machine kibana en faisant :*
 
@@ -78,3 +96,53 @@ cd /usr/share/kibana/bin
 ```
 
 On peut maintenant copier coller le code obtenu dans la page kibana du navigateur.
+
+# Installer Metricbeat
+*Télécharger Metricbeat*
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
+sudo dpkg -i metricbeat-8.6.2-amd64.deb
+```
+
+*Se connecter à la suite Elastic en définissant les informations de connexion en faisant*
+```
+nano /etc/metricbeat/metricbeat.yml
+```
+* et définir les paramètres suivants :*
+```
+=========================== Modules configuration ============================
+reload.enabled: true
+reload.period: 10s
+
+================================= Dashboards =================================
+setup.dashboards.enabled: true
+
+=================================== Kibana ===================================
+host: "4.233.61.203:5601"
+
+---------------------------- Elasticsearch Output ----------------------------
+
+output.elasticsearch:
+  hosts: ["4.233.61.203:9200"]
+  
+  protocol: "https"
+
+  username: "elastic"
+  password: "YMmjKK_t_9KubA_8F4P7"
+  ssl.verification_mode: none
+```
+
+*Configurer les ressources avec :*
+```
+metricbeat setup -e
+```
+
+*Démarrer Metricbeat*
+```
+sudo service metricbeat start
+```
+
+*Vérifier son status*
+```
+sudo service metricbeat status
+```

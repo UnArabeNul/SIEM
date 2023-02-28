@@ -72,32 +72,49 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
 
 4/ **mise en place de la PKI**
 
-  - création de la CA avec openssl
+  - création de la CA (root) avec openssl
   
-      On génére la clé qui servira pour la CA et le certification
+      On génére la clé qui servira pour la CA (root) et le certificat
   
    ```openssl genrsa -des3 -out ca.key 4096```    passphrase : root
    
    ```openssl req -new -x509 -days 365 -key ca.key -out ca_cert.pem```
+   
+   
+   - création de la CA (inter) avec openssl
+  
+      On génére la clé qui servira pour la CA (inter) et le certificat
+  
+   ```openssl genrsa -des3 -out inter_ca.key 4096```    passphrase : root
+   
+   ```openssl req -new -x509 -days 365 -key inter_ca.key -out inter_ca_cert.pem```
+   
+   
     
-  - Création des clés pour les certifs du server http
+  - On génére la clé qui servira pour le server apache2 et le certificat
    
    ```openssl genrsa -des3 -out apache_server.key 4096```
-    
-  - Création de certificat server
-   
+     
     ```openssl req -new -key apache_server.key -out apache_server.csr```
     
       Dans Organisation name HARIBO et "intra.haribo.lan" dans Common Name
-    
-   - Trusted du certificat server grace aux clé/certif de la CA
       
-    ```openssl x509 -req -days 365 -in apache_server.csr  -CA ca_cert.pem -CAkey ca.key -CAcreateserial -out apache_server.crt```
+      
+    
+   - Trusted du certificat server grace aux clé/certif de la CA (inter)
+      
+    ```openssl x509 -req -days 365 -in apache_server.csr  -CA inter_ca_cert.pem -CAkey inter_ca.key -CAcreateserial -out 				apache_server.crt```
+    
+    
+    La CA root (clé+ certif) à été creée, il faut crée une autorité intermediaire (clé+certif signé par la CA root) et enfin cré 	un certificat server (clé + certif signé par la CA intermediaire) 
+    
+  
     
    - activation du module ssl
     
      ```sudo a2enmod ssl```
-     
+
+  
      Modification du fichier de conf 443
 		 
         ```<VirtualHost _default_:443>
@@ -131,6 +148,6 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
 
         </VirtualHost>```
     
-    Le rajout au chemin dans le DocumentRoot est le dossier contenant notre site accesible en https
+    Rajout du chemin dans le DocumentRoot est le dossier contenant notre site accesible en https
     
     

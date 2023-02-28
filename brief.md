@@ -1,7 +1,5 @@
-# VM-Gate
-## SOMMAIRE
-* [Configuration de l'interface réseau](#configuration-de-linterface-réseau)
-* [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
+# Nadir
+tâches :
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.
@@ -11,9 +9,16 @@
 * Portcentry
   * Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
 * Un antimalware devra être installé sur chaque machine
+## SOMMAIRE
+* [Configuration de la VM-GATE](#configuration-de-la-vm-gate)
+* [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
+* SSH
+* Fail2ban
+* Portcentry
+* Antimalware
 
-## CONFIGURATION DE L'INTERFACE RÉSEAU
-### VmWare
+## Configuration de la VM-GATE
+### VM Ware
 Modifier la 1ere carte réseau en NAT  
 Ajouter une 2eme carte réseau en host-only
 ### VM-GATE

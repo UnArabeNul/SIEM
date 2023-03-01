@@ -41,6 +41,11 @@ subnet 10.0.0.0 netmask 255.255.255.0 {       #declaration du reseau
         range                           10.0.0.50 10.0.0.150; # Plage IP
         option domain-name-servers      10.0.0.10;     # DNS
         option routers                  10.0.0.254;    # Passerelle
+        
+        host {
+                hardware ethernet 68:5d:43:2a:f3:af;
+                fixed-address 10.0.0.20;
+        }
 }
 
 systemctl start isc-dhcp-server

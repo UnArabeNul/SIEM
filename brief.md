@@ -4,13 +4,13 @@ Installation d'une debian 11 non-graphique effectuer l'update + upgrade du syste
    
  Création d'un utilisateur "intranet-server" pour eviter d'exposer le compte "root" lors de l'utilisation du serveur apache2
  
- Ajout de l'utilisateur "intranet-server" au groupe www-data pour permettre l'execution du server apache2
+ Modifier les variables d'environnement pour changer l'user et le groupe exécutant Apache2 dans le fichier : nano /etc/apache2/envvars 
 
- ```sudo adduser intranet-server www-data```
+redémarrer le serveur apache2
+
+ Verifier que le processus apache2 s'execute sous intranet-server:
  
- Verifier que l'utilisateur fait bien parti du groupe :
- 
- ```id intranet-server```
+ ```top -u intranet-server```
 
  Création des dossiers log/ et /www  au niveau de la home de l'utilisateur intranet-server
 

@@ -6,11 +6,14 @@ Installation d'une debian 11 non-graphique effectuer l'update + upgrade du syste
  
  Modifier les variables d'environnement pour changer l'user et le groupe exécutant Apache2 dans le fichier : nano /etc/apache2/envvars 
 
+
 redémarrer le serveur apache2
 
  Verifier que le processus apache2 s'execute sous intranet-server:
  
  ```top -u intranet-server```
+ 
+ 
 
  Création des dossiers log/ et /www  au niveau de la home de l'utilisateur intranet-server
 

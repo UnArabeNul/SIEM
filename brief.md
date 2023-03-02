@@ -132,9 +132,9 @@ output.elasticsearch:
   ssl.verification_mode: none
 ```
 
-*Configurer les ressources avec :*
+*Configurer les ressources avec (cela peut durer un certain moment, il faut attendre qu'il soit loaded) :*
 ```
-metricbeat setup -e #cela peut durer un certain moment, il faut attendre qu'il soit loaded)
+metricbeat setup -e
 ```
 
 *Activer Metricbeat au démarrage*

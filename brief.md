@@ -151,8 +151,7 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
                                 SSLOptions +StdEnvVars
                 </Directory>
 
-        </VirtualHost>
-	```
+        </VirtualHost>```
 	
     
     Rajout du chemin dans le DocumentRoot est le dossier contenant notre site accesible en https

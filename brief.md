@@ -5,7 +5,7 @@ Tâches :
 * <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 * <del>Serveur proxy HTTP</del>
 * Toute requête vers une page web devra obligatoirement passer par le serveur proxy
-* Metricbeat
+* <del>Metricbeat</del>
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.
@@ -121,9 +121,43 @@ rechargez le fichier avec la commande suivante :
 source /etc/environment
 ```
 ## Metricbeat
-installation des paquets Metricbeat :
+#### Installation de Metricbeat :
 ```
 curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
 sudo dpkg -i metricbeat-8.6.2-amd64.deb
 ```
+##### Configuration de Metricbeat :
+```
+nano /etc/metricbeat/metricbeat.yml
+```
+> metricbeat.yml
+```
+=========================== Modules configuration ============================
+reload.enabled: true
+reload.period: 10s
 
+================================= Dashboards =================================
+setup.dashboards.enabled: true
+
+=================================== Kibana ===================================
+host: "4.233.61.203:5601"
+
+---------------------------- Elasticsearch Output ----------------------------
+
+output.elasticsearch:
+  hosts: ["4.233.61.203:9200"]
+  
+  protocol: "https"
+
+  username: "elastic"
+  password: "YMmjKK_t_9KubA_8F4P7"
+  ssl.verification_mode: none
+```
+#### Initialisation de Metricbeat
+```
+metricbeat setup -e
+```
+```
+systemctl start metricbeat
+systemctl enable metricbeat
+```

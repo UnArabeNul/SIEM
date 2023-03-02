@@ -159,4 +159,11 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
     
     ```chown -R intranet-server www```
     
+    **Mise en place site via le repo git** 
+    .Se positionnez dans le dossier parent de "www"  /home/intranet-server/
+    .En premier cloner le repo via la commande : git clone https://github.com/shivamdixit/WebGoatPHP.git www 
+    .Installer les paquets : ```apt install php php-mysql mariadb-server```
+    .lancer la config "mysql_secure_installation" pour crée un admin et une base de données 
+    .
+    
     

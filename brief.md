@@ -6,6 +6,7 @@ Tâches :
 * <del>Serveur proxy HTTP</del>
 * <del>Toute requête vers une page web devra obligatoirement passer par le serveur proxy</del>
 * <del>Metricbeat</del>
+* <del>Filebeat</del>
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.
@@ -19,6 +20,7 @@ Tâches :
 * [Configuration de la VM-GATE](#configuration-de-la-vm-gate)
 * [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
 * [Metricbeat](#metricbeat)
+* [Filebeat](#filebeat)
 * SSH
 * Fail2ban
 * Portcentry
@@ -45,21 +47,21 @@ address 10.0.0.254
 netmask 255.255.255.0
 gateway 10.0.0.254
 ```
-#### Up l'interface
+#### Up l'interface :
 ```
 ip link set ens33 up
 ip link set ens36 up
 ```
-#### Activation de l'ip forward
+#### Activation de l'ip forward :
 > /etc/sysctl.conf
 ```
 net.ipv4.ip_forward=1
 ```
-#### Ajouter une règle postrouting
+#### Ajouter une règle postrouting :
 ```
 sudo iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
 ```
-#### Rendre permanant les règles de routage
+#### Rendre permanant les règles de routage :
 ```
 sudo apt install iptables-persistent
 yes
@@ -112,12 +114,12 @@ rechargez le fichier avec la commande suivante :
 source /etc/environment
 ```
 ## Metricbeat
-### Installation de Metricbeat :
+### Installation de Metricbeat 
 ```
 curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
 sudo dpkg -i metricbeat-8.6.2-amd64.deb
 ```
-### Configuration de Metricbeat :
+### Configuration de Metricbeat 
 ```
 nano /etc/metricbeat/metricbeat.yml
 ```
@@ -151,4 +153,9 @@ metricbeat setup -e
 ```
 systemctl start metricbeat
 systemctl enable metricbeat
+```
+## Filebeat
+### Installation de Filebeat
+```
+
 ```

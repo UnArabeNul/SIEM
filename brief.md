@@ -4,7 +4,7 @@ Tâches :
 * <del>L'adresse IP sera fixe</del>
 * <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 * <del>Serveur proxy HTTP</del>
-* Toute requête vers une page web devra obligatoirement passer par le serveur proxy
+* <del>Toute requête vers une page web devra obligatoirement passer par le serveur proxy</del>
 * <del>Metricbeat</del>
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
@@ -25,15 +25,15 @@ Tâches :
 * Antimalware
 
 ## Configuration de la VM-GATE
-### VM Ware
+#### VM Ware
 Modifier la 1ere carte réseau en NAT  
 Ajouter une 2eme carte réseau en host-only
-### VM-GATE
+#### VM-GATE
 ```
 apt install sudo
 sudo apt install iptables
 ```
-#### Configuration des cartes réseaux
+### Configuration des cartes réseaux
 > /etc/network/interfaces
 ```
 auto ens33
@@ -66,7 +66,7 @@ yes
 yes
 ```
 ## MISE EN PLACE DU PROXY AVEC FILTRAGE
-### VM-GATE
+#### VM-GATE
 ``` 
 sudo apt install squid  
 sudo systemctl enable squid
@@ -92,20 +92,20 @@ arme
 ```
 sudo systemctl reload squid
 ```
-## LIAISON VM-GATE <-> VM-AZURE
-### VM-GATE
+### Mise en place du proxy sur les machines
+#### VM-GATE
 ```
 sudo nano /etc/squid/squid.conf
 ```
 > squid.conf
 ```
-acl azure_vm src 20.111.15.63
+acl azure_vm src 4.233.61.203
 http_access allow azure_vm
 ```
 ```
 sudo systemctl restart squid
 ```
-### VM-AZURE
+#### VM-X
 ```
 sudo nano /etc/environment
 ```
@@ -121,12 +121,12 @@ rechargez le fichier avec la commande suivante :
 source /etc/environment
 ```
 ## Metricbeat
-#### Installation de Metricbeat :
+### Installation de Metricbeat :
 ```
 curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
 sudo dpkg -i metricbeat-8.6.2-amd64.deb
 ```
-##### Configuration de Metricbeat :
+### Configuration de Metricbeat :
 ```
 nano /etc/metricbeat/metricbeat.yml
 ```
@@ -153,7 +153,7 @@ output.elasticsearch:
   password: "YMmjKK_t_9KubA_8F4P7"
   ssl.verification_mode: none
 ```
-#### Initialisation de Metricbeat
+### Initialisation de Metricbeat
 ```
 metricbeat setup -e
 ```

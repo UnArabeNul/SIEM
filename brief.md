@@ -134,12 +134,12 @@ output.elasticsearch:
 
 *Configurer les ressources avec :*
 ```
-metricbeat setup -e (cela peut durer un certain moment, il faut attendre qu'il soit loaded)
+metricbeat setup -e #cela peut durer un certain moment, il faut attendre qu'il soit loaded)
 ```
 
 *Activer Metricbeat au démarrage*
 ```
-sudo enable metricbeat
+systemctl enable metricbeat
 ```
 
 *Démarrer Metricbeat*

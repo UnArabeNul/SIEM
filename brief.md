@@ -77,9 +77,12 @@ sudo nano /etc/squid/squid.conf
 > squid.conf
 ```
 acl lan src 10.0.0.0/24
+acl azure_vm src 4.233.61.203
 acl blacklist url_regex "/etc/squid/blacklist.acl"
-http_access deny lan blacklist
+http_access deny blacklist lan 
+http_access deny blacklist azure_vm
 http_access allow lan
+http_access allow azure_vm
 ```
 ```
 sudo nano /etc/squid/blacklist.acl
@@ -93,18 +96,6 @@ arme
 sudo systemctl reload squid
 ```
 ### Mise en place du proxy sur les machines
-#### VM-GATE
-```
-sudo nano /etc/squid/squid.conf
-```
-> squid.conf
-```
-acl azure_vm src 4.233.61.203
-http_access allow azure_vm
-```
-```
-sudo systemctl restart squid
-```
 #### VM-X
 ```
 sudo nano /etc/environment

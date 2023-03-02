@@ -5,24 +5,24 @@ Tâches :
 * <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 * <del>Serveur proxy HTTP</del>
 * <del>Toute requête vers une page web devra obligatoirement passer par le serveur proxy</del>
+* * Fail2ban
+  * Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
+  heures, son IP devra être bannie pour une durée de 2 minutes
 * <del>Metricbeat</del>
-* <del>Filebeat</del>
+* Filebeat
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.
-* Fail2ban
-  * Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
-  heures, son IP devra être bannie pour une durée de 2 minutes
 * Portcentry
   * Un programme permettant de détecter les IPS effectuant des scans de port devra être installé sans les bannir mais devra les logger dans un fichier
 * Un antimalware devra être installé sur chaque machine
 ## SOMMAIRE
 * [Configuration de la VM-GATE](#configuration-de-la-vm-gate)
 * [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
+* [Fail2ban](#fail2ban)
 * [Metricbeat](#metricbeat)
 * [Filebeat](#filebeat)
 * SSH
-* Fail2ban
 * Portcentry
 * Antimalware
 
@@ -113,8 +113,29 @@ rechargez le fichier avec la commande suivante :
 ```
 source /etc/environment
 ```
+## Fail2ban
+### Installation de Fail2ban
+```
+apt install fail2ban
+```
+### Configuration de Fail2ban
+```
+cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+nano /etc/fail2ban/jail.local
+```
+> jail.local
+```
+[sshd]
+enable = true
+port    = ssh
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+bantime = 2 m
+findtime = 6h
+maxretry = 1
+```
 ## Metricbeat
-### Installation de Metricbeat 
+### Installation de Metricbeat
 ```
 curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
 sudo dpkg -i metricbeat-8.6.2-amd64.deb

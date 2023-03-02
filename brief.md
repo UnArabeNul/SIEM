@@ -137,6 +137,11 @@ output.elasticsearch:
 metricbeat setup -e (cela peut durer un certain moment, il faut attendre qu'il soit loaded)
 ```
 
+*Activer Metricbeat au démarrage*
+```
+sudo enable metricbeat
+```
+
 *Démarrer Metricbeat*
 ```
 sudo service metricbeat start

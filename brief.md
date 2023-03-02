@@ -124,7 +124,7 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
 		 
         ```<VirtualHost _default_:443>
                 ServerAdmin webmaster@localhost
-                DocumentRoot **/var/www/html/WebGoatPHP**
+                DocumentRoot **/home/intranet-server/www/webgoat**
           
                 ErrorLog ${APACHE_LOG_DIR}/error.log
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
@@ -154,5 +154,8 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
         </VirtualHost>```
     
     Rajout du chemin dans le DocumentRoot est le dossier contenant notre site accesible en https
+    Ne pas oublier de changer le proprietaire du dossier www de root à intranet-server 
+    
+    ```chown -R intranet-server www```
     
     

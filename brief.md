@@ -5,6 +5,7 @@ Tâches :
 * <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 * <del>Serveur proxy HTTP</del>
 * Toute requête vers une page web devra obligatoirement passer par le serveur proxy
+* Metricbeat
 * SSH
   * L'authentification en root devra être désactivé et ce même par clé.
   * Le serveur SSH devra logger chaque connexion échouée ou réussie.
@@ -17,6 +18,7 @@ Tâches :
 ## SOMMAIRE
 * [Configuration de la VM-GATE](#configuration-de-la-vm-gate)
 * [Serveur proxy HTTP](#mise-en-place-du-proxy-avec-filtrage)
+* [Metricbeat](#metricbeat)
 * SSH
 * Fail2ban
 * Portcentry
@@ -118,5 +120,10 @@ rechargez le fichier avec la commande suivante :
 ```
 source /etc/environment
 ```
-
+## Metricbeat
+installation des paquets Metricbeat :
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.6.2-amd64.deb
+sudo dpkg -i metricbeat-8.6.2-amd64.deb
+```
 

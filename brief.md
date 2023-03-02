@@ -5,9 +5,9 @@ Tâches :
 * <del>Toutes les machines devront pouvoir accéder à internet à travers une Gateway</del>
 * <del>Serveur proxy HTTP</del>
 * <del>Toute requête vers une page web devra obligatoirement passer par le serveur proxy</del>
-* * Fail2ban
+* <del>Fail2ban
   * Si une IP récolte deux tentatives de connexions échouées dans une fenêtre de 6
-  heures, son IP devra être bannie pour une durée de 2 minutes
+  heures, son IP devra être bannie pour une durée de 2 minutes</del>
 * <del>Metricbeat</del>
 * Filebeat
 * SSH

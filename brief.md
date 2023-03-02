@@ -4,11 +4,12 @@
 - <del>DNS </del>
 - <del>Accès à internet </del>
 - <del>Création domaine haribo.lan </del>
-- SSH Serveur ( pour l'accès avec VM-User )
+- <del>SSH Serveur ( pour l'accès avec VM-User )</del>
 - <del>Le domaine devra etre installer sur la VM-Network </del>
 - Un antimalware devra être installé sur chaque machine
 - <del> L’adresse du serveur DNS devra être automatiquement distribué sur toutes les machines </del>
 - Porcentry
+- <del>Metricbeat</del>
 
 #### Mise a jour du systeme de base
 ```

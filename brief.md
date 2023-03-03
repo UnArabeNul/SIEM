@@ -44,6 +44,9 @@ sudo systemctl start elasticsearch.service
 ```
 curl -k -u elastic:<mdp> https://localhost:9200
 ```
+*Créer un index :*
+curl -k -u elastic:YMmjKK_t_9KubA_8F4P7 -X PUT "https://localhost:9200/<nom_de_l'index>"
+
 # Installer Kibana
 
 *Installer le package Kibana Debian avec :*
@@ -139,7 +142,7 @@ metricbeat setup -e
 
 *Activer Metricbeat au démarrage*
 ```
-systemctl enable metricbeat
+sudo systemctl enable metricbeat
 ```
 
 *Démarrer Metricbeat*
@@ -150,4 +153,65 @@ sudo service metricbeat start
 *Vérifier son status*
 ```
 sudo service metricbeat status
+```
+
+# Installer Filebeat
+*Télécharger Filebeat*
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.6.2-amd64.deb
+sudo dpkg -i filebeat-8.6.2-amd64.deb
+```
+
+*Se connecter à la suite Elastic en définissant les informations de connexion en faisant*
+```
+nano /etc/filebeat/filebeat.yml
+```
+*et définir les paramètres suivants :*
+```
+=========================== Modules configuration ============================
+reload.enabled: true
+reload.period: 10s
+
+================================= Dashboards =================================
+setup.dashboards.enabled: true
+
+=================================== Kibana ===================================
+host: "4.233.61.203:5601"
+
+---------------------------- Elasticsearch Output ----------------------------
+
+output.elasticsearch:
+  hosts: ["4.233.61.203:9200"]
+  
+  protocol: "https"
+
+  username: "elastic"
+  password: "YMmjKK_t_9KubA_8F4P7"
+  ssl.verification_mode: none
+```
+
+*Activer et configurer les modules de collecte de données
+```
+filebeat modules list
+filebeat modules enable <nom_du_service>
+```
+
+*Configurer les ressources avec (cela peut durer un certain moment, il faut attendre qu'il soit loaded) :*
+```
+metricbeat setup -e
+```
+
+*Activer Filebeat au démarrage*
+```
+sudo systemctl enable filebeat
+```
+
+*Démarrer Filebeat*
+```
+sudo service filebeat start
+```
+
+*Vérifier son status*
+```
+sudo service filebeat status
 ```

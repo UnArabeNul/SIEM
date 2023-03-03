@@ -135,7 +135,7 @@ output.elasticsearch:
   ssl.verification_mode: none
 ```
 
-*Configurer les ressources avec (à chaque fois qu'on active un nouveau module. Cela peut durer un certain moment, il faut attendre qu'il soit loaded) :*
+*Configurer les ressources (à chaque fois qu'on active un nouveau module. Cela peut durer un certain moment, il faut attendre qu'il soit loaded)*
 ```
 metricbeat setup -e
 ```
@@ -202,7 +202,7 @@ filebeat modules enable <nom_du_service>
 nano /etc/filebeat/module.d/<nom_du_service>.yml
 ```
 
-*Configurer les ressources avec (à chaque fois qu'on active un nouveau module. Cela peut durer un certain moment, il faut attendre qu'il soit loaded) :*
+*Configurer les ressources (à chaque fois qu'on active un nouveau module. Cela peut durer un certain moment, il faut attendre qu'il soit loaded)*
 ```
 metricbeat setup -e
 ```

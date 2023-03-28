@@ -165,6 +165,6 @@ Le changement au niveau du DocumentRoot + Directory + Options Indexes ....  perm
     . En premier cloner le repo via la commande : git clone https://github.com/shivamdixit/WebGoatPHP.git www 
     . Installer les paquets : ```apt install php php-mysql mariadb-server```
     . lancer la config "mysql_secure_installation" pour config la bdd et répondre Yes à toutes les demandes
-    .
+    . Pensez à changer le proprietaire de /var/www par la commande chown
     
     

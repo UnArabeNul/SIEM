@@ -204,7 +204,7 @@ nano /etc/filebeat/module.d/<nom_du_service>.yml
 
 *Configurer les ressources (à chaque fois qu'on active un nouveau module. Cela peut durer un certain moment, il faut attendre qu'il soit loaded)*
 ```
-metricbeat setup -e
+filebeat setup -e
 ```
 
 *Activer Filebeat au démarrage*
